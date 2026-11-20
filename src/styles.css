@@ -1,0 +1,327 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Keep every @import in this top block. Remote fonts load via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-lavender: var(--lavender);
+  --color-blush: var(--blush);
+  --color-plum: var(--plum);
+  --color-glass: var(--glass);
+  --color-glass-border: var(--glass-border);
+  --color-overlay: var(--overlay);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-hand: "Caveat", cursive;
+
+  --animate-heart-pulse: heart-pulse 1.6s ease-in-out infinite;
+  --animate-soft-float: soft-float 5s ease-in-out infinite;
+  --animate-spin-slow: spin 4s linear infinite;
+  --animate-site-in: site-in 1s ease-out both;
+  --animate-letter-in: letter-in 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.975 0.016 350);
+  --foreground: oklch(0.33 0.08 345);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.33 0.08 345);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.33 0.08 345);
+  --primary: oklch(0.7 0.17 356);
+  --primary-foreground: oklch(1 0 0);
+  --primary-glow: oklch(0.82 0.11 352);
+  --secondary: oklch(0.93 0.04 310);
+  --secondary-foreground: oklch(0.38 0.1 310);
+  --muted: oklch(0.95 0.025 340);
+  --muted-foreground: oklch(0.52 0.06 335);
+  --accent: oklch(0.68 0.15 312);
+  --accent-foreground: oklch(1 0 0);
+  --lavender: oklch(0.85 0.075 300);
+  --blush: oklch(0.91 0.06 355);
+  --plum: oklch(0.4 0.12 340);
+  --glass: oklch(1 0 0 / 0.55);
+  --glass-border: oklch(1 0 0 / 0.75);
+  --overlay: oklch(0.25 0.06 330 / 0.75);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.9 0.04 345);
+  --input: oklch(0.9 0.04 345);
+  --ring: oklch(0.7 0.17 356);
+  --chart-1: oklch(0.7 0.17 356);
+  --chart-2: oklch(0.68 0.15 312);
+  --chart-3: oklch(0.85 0.075 300);
+  --chart-4: oklch(0.82 0.11 352);
+  --chart-5: oklch(0.4 0.12 340);
+  --sidebar: oklch(0.975 0.016 350);
+  --sidebar-foreground: oklch(0.33 0.08 345);
+  --sidebar-primary: oklch(0.7 0.17 356);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.93 0.04 310);
+  --sidebar-accent-foreground: oklch(0.38 0.1 310);
+  --sidebar-border: oklch(0.9 0.04 345);
+  --sidebar-ring: oklch(0.7 0.17 356);
+
+  --gradient-romance: linear-gradient(135deg, var(--primary), var(--accent));
+  --gradient-dream: radial-gradient(ellipse at 15% 10%, oklch(0.93 0.06 355) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 30%, oklch(0.92 0.06 305) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, oklch(0.94 0.05 330) 0%, transparent 60%),
+    var(--background);
+  --gradient-envelope: linear-gradient(160deg, oklch(0.88 0.08 355), oklch(0.84 0.08 305));
+  --gradient-envelope-front: linear-gradient(200deg, oklch(0.9 0.07 352), oklch(0.82 0.09 310));
+  --gradient-envelope-flap: linear-gradient(180deg, oklch(0.8 0.11 352), oklch(0.78 0.1 315));
+  --shadow-dreamy: 0 20px 50px -18px color-mix(in oklab, var(--accent) 45%, transparent);
+  --shadow-polaroid: 0 14px 30px -12px color-mix(in oklab, var(--plum) 35%, transparent);
+  --shadow-glow: 0 0 18px 4px color-mix(in oklab, var(--primary) 55%, transparent);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--gradient-dream);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+  ::selection {
+    background: var(--blush);
+  }
+}
+
+@utility glass-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: var(--shadow-dreamy);
+}
+@utility bg-romance {
+  background-image: var(--gradient-romance);
+}
+@utility text-romance {
+  background-image: var(--gradient-romance);
+  background-clip: text;
+  color: transparent;
+}
+@utility bg-envelope {
+  background-image: var(--gradient-envelope);
+}
+@utility bg-envelope-front {
+  background-image: var(--gradient-envelope-front);
+  clip-path: polygon(0 30%, 50% 68%, 100% 30%, 100% 100%, 0 100%);
+}
+@utility bg-envelope-flap {
+  background-image: var(--gradient-envelope-flap);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+@utility shadow-dreamy {
+  box-shadow: var(--shadow-dreamy);
+}
+@utility shadow-polaroid {
+  box-shadow: var(--shadow-polaroid);
+}
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+@utility drop-glow {
+  filter: drop-shadow(0 0 10px color-mix(in oklab, var(--primary) 70%, transparent));
+}
+
+/* Romantic gradient button */
+@utility btn-romance {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.9rem 2rem;
+  font-weight: 600;
+  color: var(--primary-foreground);
+  background-image: var(--gradient-romance);
+  box-shadow: var(--shadow-dreamy);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: var(--shadow-glow);
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px) rotate(var(--reveal-rotate, 0deg)) scale(0.97);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Background particles */
+.particle {
+  position: absolute;
+  bottom: -8vh;
+  will-change: transform, opacity;
+  animation: float-up var(--dur) linear var(--delay) infinite;
+}
+
+/* Heart burst */
+.burst-heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: burst 1.2s cubic-bezier(0.15, 0.7, 0.3, 1) forwards;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--op, 0.7);
+  }
+  50% {
+    transform: translate3d(var(--drift), -55vh, 0) rotate(180deg);
+  }
+  90% {
+    opacity: var(--op, 0.7);
+  }
+  100% {
+    transform: translate3d(calc(var(--drift) * -0.5), -115vh, 0) rotate(360deg);
+    opacity: 0;
+  }
+}
+@keyframes burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(var(--s))
+      rotate(var(--r));
+    opacity: 0;
+  }
+}
+@keyframes heart-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.18);
+  }
+  30% {
+    transform: scale(0.96);
+  }
+  45% {
+    transform: scale(1.1);
+  }
+}
+@keyframes soft-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+@keyframes site-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes letter-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .particle,
+  .burst-heart {
+    animation: none;
+    display: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
